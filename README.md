@@ -2,12 +2,24 @@
 Some personal notes when using Matplotlib
 
 <details>
-  <summary> 色条 </summary>
+  <summary> 数据读取 </summary>
+  numpy.genfromtxt() csv类型数据文件读取  
+
+  - 分隔符：delimiter=','
+  - 去头尾：skip_header=1, skip_footer=1
+  - 选取列：usecols=(0,-1) or [0,1,2]
+  - 缺失添加：
+</details>
+
+
+<details>
+  <summary> 色条 </summary>  
+  
+  - 色条添加：fig.colorbar(im,ax,'horizontal',format=formatter,...)  
+    在图窗加色条，formatter是设置字符格式,formatter=mpl.ticker.StrmethodFormatter('x:.{f}')
     
-  - 在图窗加色条：fig.colorbar(im,ax,'horizontal',format=formatter,...)  
-    formatter是设置字符格式,formatter=mpl.ticker.StrmethodFormatter('x:.{f}')
-    
-  - 在画图函数参数中的norm可以根据数据归一化色条  
+  - 色条归一化  
+    在画图函数参数中的norm可以根据数据归一化  
     norm=mpl.colors.Normalize(-wlim/n,wlim/n)  
     以contourf函数为例：ax.contourf(X,Y,Z,norm=norm,cmap=mpl.cm.get_cmap("ReBu)  
 </details>
