@@ -3,12 +3,17 @@ Some personal notes when using Matplotlib
 
 <details>
   <summary> 数据读取 </summary>
-  numpy.genfromtxt() csv类型数据文件读取  
+  numpy.genfromtxt() 数据文件读取，注意三点：
+  文件格式：设置合适分隔符和数据类型  
+  错误处理：提供了多种错误或缺失数据选项  
+  内存使用：对于大文件，可以块的形式加载数据  
 
   - 分隔符：delimiter=','
+  - 数据类型：dtype=[('myint', '<i8'), ('myfloat', '<f8'), ('mystring', 'S5')]
+  - 缺失填充： missing_values='NA', filling_values=(np.nan)  
   - 去头尾：skip_header=1, skip_footer=1
   - 选取列：usecols=(0,-1) or [0,1,2]
-  - 缺失添加：
+
 </details>
 
 
